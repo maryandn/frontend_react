@@ -117,10 +117,10 @@ export default function PrimarySearchAppBar() {
             onClose={handleMenuClose}
         >
             <MenuItem>
-                <SimpleModal type={'Войти'}/>
+                <SimpleModal type={'Войти'} updateHandleMenuClose={handleMenuClose} />
             </MenuItem>
             <MenuItem>
-                <SimpleModal type={'Зарегестрироватся'}/>
+                <SimpleModal type={'Зарегестрироватся'} updateHandleMenuClose={handleMenuClose} />
             </MenuItem>
         </Menu>
     );
@@ -196,16 +196,16 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
-                        {/*<IconButton aria-label="show 4 new mails" color="inherit">*/}
-                        {/*    <Badge badgeContent={4} color="secondary">*/}
-                        {/*        <MailIcon/>*/}
-                        {/*    </Badge>*/}
-                        {/*</IconButton>*/}
-                        {/*<IconButton aria-label="show 17 new notifications" color="inherit">*/}
-                        {/*    <Badge badgeContent={17} color="secondary">*/}
-                        {/*        <NotificationsIcon/>*/}
-                        {/*    </Badge>*/}
-                        {/*</IconButton>*/}
+                        <IconButton aria-label="show 4 new mails" color="inherit">
+                            <Badge badgeContent={4} color="secondary">
+                                <MailIcon/>
+                            </Badge>
+                        </IconButton>
+                        <IconButton aria-label="show 17 new notifications" color="inherit">
+                            <Badge badgeContent={17} color="secondary">
+                                <NotificationsIcon/>
+                            </Badge>
+                        </IconButton>
                         <IconButton
                             edge="end"
                             aria-label="account of current user"

@@ -34,6 +34,7 @@ export default function SimpleModal(props) {
 
     const handleOpen = () => {
         setOpen(true);
+        props.updateHandleMenuClose(null);
     };
 
     const handleClose = () => {
@@ -42,7 +43,7 @@ export default function SimpleModal(props) {
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <BasicTextFields type={props.type}/>
+            <BasicTextFields type={props.type} updateHandleClose={handleClose}/>
         </div>
     );
 
