@@ -36,11 +36,12 @@ export default function BasicTextFields(props) {
     }
 
     const handleChangeSignup = e => {
-        const {id, value} = e.target
-        setSignup(prevState => ({
-            ...prevState,
-            [id]: value
-        }))
+        setSignup(prevSignup => {
+            return {
+                ...prevSignup,
+                login: e.target.login,
+            }
+        })
     }
 
     const handleSubmitLogin = () => {
@@ -104,14 +105,14 @@ export default function BasicTextFields(props) {
     } else {
         return (
             <form className={classes.root} noValidate autoComplete="off">
-                <TextField id="login"
+                <TextField id="signupLogin"
                            label='Login'
                            variant="outlined"
                            required={true}
                            value={signup.login}
                            onChange={handleChangeSignup}
                 />
-                <TextField id="password"
+                <TextField id="signupPassword"
                            label='Password'
                            variant="outlined"
                            required={true}
