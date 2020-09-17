@@ -64,4 +64,5 @@ export default function SimpleModal(props) {
             </Modal>
         </div>
     );
+
 }
