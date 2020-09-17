@@ -1,7 +1,8 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import BasicTextFields from "./inputform";
+import TextFieldsLogin from "../Form/formLogin";
+import TextFieldsSignup from "../Form/formSignup";
 
 function getModalStyle() {
     const top = 50;
@@ -43,7 +44,8 @@ export default function SimpleModal(props) {
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <BasicTextFields type={props.type} updateHandleClose={handleClose}/>
+            { props.type === 'Войти' ? <TextFieldsLogin updateHandleClose={handleClose}/> :
+                <TextFieldsSignup updateHandleClose={handleClose}/>}
         </div>
     );
 
