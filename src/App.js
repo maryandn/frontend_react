@@ -5,7 +5,6 @@ import PrimarySearchAppBar from "./navbar/navbar";
 function App() {
   return (
     <PrimarySearchAppBar />
-
   );
 }
 

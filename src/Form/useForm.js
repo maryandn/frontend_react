@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useForm = () => {
+export default function useForm() {
 
     const [form, setForm] = useState({
         login: "",
@@ -9,6 +9,7 @@ const useForm = () => {
         email: "",
         phone: "",
         emailValidate: false,
+        spinnerStatus: false
     });
 
     const handleChangeForm = e => {
@@ -19,7 +20,12 @@ const useForm = () => {
         }))
     };
 
-    return { handleChangeForm, form };
-};
+    const changeSpinnerStatus = (fields, value) => {
+        setForm(prevState => ({
+            ...prevState,
+        [fields]: value
+        }))
+    }
 
-export default useForm;
+    return { handleChangeForm, changeSpinnerStatus, form };
+};
